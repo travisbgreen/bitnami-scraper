@@ -7,7 +7,7 @@ import logging
 # jupyter does weird stuff with logging
 # https://stackoverflow.com/questions/18786912/get-output-from-the-logging-module-in-ipython-notebook
 logger = logging.getLogger()
-logger.setLevel(logging.DEBUG)
+logger.setLevel(logging.INFO)
 
 base_url = 'https://bitnami.com'
 stacks_url = f'{base_url}/stacks/virtual-machine'
@@ -44,14 +44,14 @@ else:
 
 # %%
 ova_list = list(set(ova_list))
-logging.info(f"Found {len(ova_list)} matches.")
+print(f"Found {len(ova_list)} matches.")
 
 # %%
 with open('tmpfile', 'w') as f:
     for ova in ova_list:
-        logging.info(f'ova file link: {ova}')
+        logging.debug(f'ova file link: {ova}')
         f.write(ova + '\r\n')
     f.close
 
-logging.info('list complete, now run the following command:')
-logging.info('wget -nc --continue -i tmpfile')
+print('list complete, now run the following command:')
+print('wget -nc --continue -i tmpfile')
