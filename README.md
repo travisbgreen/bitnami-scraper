@@ -1,5 +1,5 @@
 # bitnami-scraper
-Generates a list of urls to download Bitnami's very cool VMs
+Generates a list of urls to download [Bitnami's very cool VM templates](https://bitnami.com/stacks)
 
 ## usage
 ```
